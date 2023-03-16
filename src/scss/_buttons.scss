@@ -1,0 +1,31 @@
+@import "./colors";
+@import "./variables";
+
+.btn {
+  padding: 10px 20px;
+  font-size: $size-m;
+  border-radius: 12px;
+  border: 2px solid transparent;
+
+  &--blue {
+    color: $white;
+    background-color: $blue;
+
+    &:hover {
+      color: $blue;
+      border-color: $blue;
+      background-color: $white;
+    }
+  }
+
+  &--white {
+    color: $blue;
+    background-color: $white;
+    border-color: $blue;
+
+    &:hover {
+      color: $white;
+      background-color: $blue;
+    }
+  }
+}
