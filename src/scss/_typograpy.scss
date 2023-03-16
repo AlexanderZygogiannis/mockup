@@ -1,0 +1,57 @@
+@import "./colors";
+@import "./variables";
+
+// Text Size
+.text-s {
+  font-size: $size-s;
+}
+
+.text-m {
+  font-size: $size-m;
+}
+
+.text-l {
+  font-size: $size-l;
+}
+
+.text-l-2 {
+  font-size: $size-l-2;
+}
+
+.text-xl {
+  font-size: $size-xl;
+}
+
+.text-xxl {
+  font-size: $size-xxl;
+}
+
+// Font weight
+.text-bold {
+  font-weight: $font-bold;
+}
+
+//Text color
+.text-white {
+  color: $white;
+}
+
+.text-black {
+  color: $black-2;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.text-gray-2 {
+  color: $gray-2;
+}
+
+.text-gray-3 {
+  color: $gray-3;
+}
+
+.text-blue {
+  color: $blue;
+}
