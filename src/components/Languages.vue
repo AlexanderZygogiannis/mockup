@@ -93,5 +93,11 @@ export default {
     width: 35px;
     height: 35px;
   }
+
+  .v-list-item {
+    &__title {
+      font-size: 16px;
+    }
+  }
 }
 </style>
