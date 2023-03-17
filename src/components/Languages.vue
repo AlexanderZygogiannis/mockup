@@ -2,7 +2,11 @@
   <v-menu offset-y max-width="230" nudge-left="50%" open-on-hover>
     <template v-slot:activator="{ on, attrs }">
       <v-btn v-bind="attrs" v-on="on" height="40" width="40" depressed plain>
-        <img class="images" :src="flag" :alt="items[selectedCountry].title" />
+        <img
+          class="country-flag"
+          :src="flag"
+          :alt="items[selectedCountry].title"
+        />
       </v-btn>
     </template>
     <v-list>
@@ -40,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.images {
+.country-flag {
   width: 40px;
   height: 40px;
 }
@@ -81,6 +85,13 @@ export default {
   &__title {
     letter-spacing: $letter-spacing;
     font-size: $size-l-2;
+  }
+}
+
+@media screen and (max-width: ($breakpoint-tablet)) {
+  .country-flag {
+    width: 35px;
+    height: 35px;
   }
 }
 </style>

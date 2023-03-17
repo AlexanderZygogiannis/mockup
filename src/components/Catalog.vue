@@ -2,11 +2,18 @@
   <div>
     <div class="d-flex align-center px-4 pb-5">
       <div class="text-xxl text-spacing pr-5">My results</div>
-      <span class="text-gray-2 text-l-2">14 Results</span>
+      <span class="d-none d-md-block text-gray-2 text-l-2">14 Results</span>
+    </div>
+    <div class="d-md-none d-flex align-center px-4">
+      <button @click="trigerFilter()" class="d-flex align-center">
+        <v-icon class="text-blue mr-2">tune</v-icon>
+        <div class="text-xl text-bold text-spacing">Filters</div>
+      </button>
+      <span class="text-gray-2 text-l-2 pl-4">14 Results</span>
     </div>
     <div class="d-flex flex-wrap">
-      <v-flex sm4 pa-4>
-        <div class="item pa-6">
+      <v-flex xs12 sm6 lg4 pa-4>
+        <div class="item pa-2 pa-md-6">
           <span
             class="item__discount item__discount--green d-flex align-center justify-center text-l"
           >
@@ -23,8 +30,8 @@
           </div>
         </div>
       </v-flex>
-      <v-flex sm4 pa-4>
-        <div class="item pa-6">
+      <v-flex xs12 sm6 lg4 pa-4>
+        <div class="item pa-2 pa-md-6">
           <span
             class="item__discount item__discount--yellow d-flex align-center justify-center text-l"
           >
@@ -41,7 +48,7 @@
           </div>
         </div>
       </v-flex>
-      <v-flex sm4 pa-4>
+      <v-flex xs12 sm6 lg4 pa-4>
         <div class="item pa-6">
           <span
             class="item__discount item__discount--red d-flex align-center justify-center text-l"
@@ -59,7 +66,7 @@
           </div>
         </div>
       </v-flex>
-      <v-flex sm4 pa-4>
+      <v-flex xs12 sm6 lg4 pa-4>
         <div class="item pa-6">
           <span
             class="item__discount item__discount--green d-flex align-center justify-center text-l"
@@ -84,6 +91,12 @@
 <script>
 export default {
   name: "CatalogItem",
+
+  methods: {
+    trigerFilter() {
+      this.$emit("trigerFilter");
+    },
+  },
 };
 </script>
 
@@ -125,7 +138,26 @@ export default {
   &__image {
     display: block;
     margin: 0 auto;
+    width: 100%;
     max-width: 250px;
+  }
+
+  @media screen and (max-width: ($breakpoint-tablet)) {
+    .item {
+      &__discount {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  @media screen and (max-width: ($min-width-mobile)) {
+    .item {
+      &__discount {
+        width: 42px;
+        height: 42px;
+      }
+    }
   }
 }
 </style>

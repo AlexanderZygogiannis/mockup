@@ -2,6 +2,10 @@
 @import "./variables";
 @import "./typograpy";
 
+//Media Queries
+@import "./media-queries/media-tablet";
+@import "./media-queries/media-mobile";
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;

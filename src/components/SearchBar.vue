@@ -1,12 +1,14 @@
 <template>
   <div class="d-flex align-end w-100 mb-10">
-    <v-flex sm3>
-      <button class="d-flex align-center justify-end text-blue text-m w-100">
+    <v-flex md4 lg3>
+      <button
+        class="d-none d-md-flex align-center justify-end text-blue text-m w-100"
+      >
         <v-icon class="text-m text-blue">arrow_back_ios</v-icon>
         <span>BACK TO MY SCAN</span>
       </button>
     </v-flex>
-    <v-flex sm9>
+    <v-flex xs12 md8 lg9>
       <div class="wrapper px-4">
         <div
           class="search-bar d-flex align-center text-l-2 text-gray text-spacing"

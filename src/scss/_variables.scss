@@ -15,3 +15,9 @@ $font-bold: 500;
 
 // Shadows
 $box-shadow-style: 0px 2px 10px 0px $box-shadow-color;
+
+// layout basic stuff
+$min-width-mobile: 600px; // Mobile min width
+$max-width-mobile: 960px; // Tablet Breakpoint - Mobile max width
+$breakpoint-tablet: 1264px; // Tablet Breakpoint - Small/Large
+// $min-width-desktop: 1904px; // Tablet Breakpoint - Desktop min width

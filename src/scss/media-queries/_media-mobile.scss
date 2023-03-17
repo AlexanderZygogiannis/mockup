@@ -1,0 +1,32 @@
+// MOBILE ( < 834px )
+@media screen and (max-width: ($min-width-mobile)) {
+  // Text Size
+  .text-s {
+    font-size: 12px;
+  }
+
+  .text-m {
+    font-size: 12px;
+  }
+
+  .text-l {
+    font-size: 13px;
+  }
+
+  .text-l-2 {
+    font-size: 14px;
+  }
+
+  .text-xl {
+    font-size: 18px;
+  }
+
+  .text-xxl {
+    font-size: 20px;
+  }
+
+  // Buttons
+  .btn {
+    font-size: 12px !important;
+  }
+}

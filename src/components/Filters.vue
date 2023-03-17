@@ -6,9 +6,9 @@
         <div class="text-xl text-bold text-spacing">Filters</div>
       </div>
 
-      <div class="d-flex justify-space-between align-center mb-7">
-        <button class="btn btn--blue">Recommended</button>
-        <button class="btn btn--white">All shoes</button>
+      <div class="d-flex flex-wrap justify-space-between align-center mb-7">
+        <button class="btn btn--blue mt-1">Recommended</button>
+        <button class="btn btn--white mt-1">All shoes</button>
       </div>
       <div>
         <v-expansion-panels>
@@ -118,6 +118,13 @@ export default {
 
   &--active {
     border-radius: 12px !important;
+  }
+}
+
+@media screen and (max-width: ($max-width-mobile)) {
+  .filters {
+    box-shadow: unset;
+    padding: 20px;
   }
 }
 </style>

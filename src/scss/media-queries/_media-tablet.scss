@@ -1,0 +1,32 @@
+// MOBILE ( < 834px )
+@media screen and (max-width: ($breakpoint-tablet)) {
+  // Text Size
+  .text-s {
+    font-size: 14px;
+  }
+
+  .text-m {
+    font-size: 14px;
+  }
+
+  .text-l {
+    font-size: 14px;
+  }
+
+  .text-l-2 {
+    font-size: 16px;
+  }
+
+  .text-xl {
+    font-size: 16px;
+  }
+
+  .text-xxl {
+    font-size: 18px;
+  }
+
+  // Buttons
+  .btn {
+    font-size: 14px !important;
+  }
+}

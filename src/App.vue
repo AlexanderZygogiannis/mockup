@@ -2,18 +2,29 @@
   <v-app>
     <NavBar />
     <SearchBar />
-    <v-content>
+    <v-main>
+      <div class="wrapper px-5">
+        <v-navigation-drawer
+          v-model="drawer"
+          absolute
+          left
+          temporary
+          width="90%"
+        >
+          <Filters />
+        </v-navigation-drawer>
+      </div>
       <div class="d-flex px-3">
-        <v-flex sm3>
+        <v-flex d-none d-md-block md4 lg3>
           <Filters />
         </v-flex>
-        <v-flex sm9>
+        <v-flex md8 lg9>
           <div class="wrapper">
-            <Catalog />
+            <Catalog @trigerFilter="togleFilter" />
           </div>
         </v-flex>
       </div>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -33,8 +44,14 @@ export default {
   },
 
   data: () => ({
-    //
+    drawer: false,
   }),
+
+  methods: {
+    togleFilter() {
+      this.drawer = !this.drawer;
+    },
+  },
 };
 </script>
 
