@@ -9,6 +9,7 @@
           absolute
           left
           temporary
+          hide-overlay
           width="90%"
         >
           <Filters />

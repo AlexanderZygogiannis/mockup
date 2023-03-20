@@ -17,8 +17,16 @@
               <div class="text-bold text-m text-spacing">Size</div>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-checkbox v-model="size" label="US" value="us" hide-details />
-              <v-checkbox v-model="size" label="EU" value="eu" hide-details />
+              <v-checkbox
+                v-for="size in sizes"
+                :key="size.id"
+                v-model="selectedsize"
+                :label="size.name"
+                :value="size.value"
+                on-icon="mdi-checkbox-marked-circle"
+                off-icon="mdi-checkbox-blank-circle-outline"
+                hide-details
+              />
             </v-expansion-panel-content>
           </v-expansion-panel>
           <v-expansion-panel class="mb-8">
@@ -26,45 +34,19 @@
               <div class="d-flex align-center justify-space-between">
                 <div class="text-bold text-m text-spacing">Brand</div>
                 <div class="text-blue text-s">
-                  {{ this.brand.length }} Selected
+                  {{ this.selectedBrand.length }} Selected
                 </div>
               </div>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <v-checkbox
-                v-model="brand"
-                label="New Balance"
-                value="New Balance"
-                hide-details
-              />
-              <v-checkbox
-                v-model="brand"
-                label="Adidas"
-                value="Adidas"
-                hide-details
-              />
-              <v-checkbox
-                v-model="brand"
-                label="Nike Perfomance"
-                value="Nike Perfomance"
-                hide-details
-              />
-              <v-checkbox
-                v-model="brand"
-                label="Reebok"
-                value="Reebok"
-                hide-details
-              />
-              <v-checkbox
-                v-model="brand"
-                label="Asics"
-                value="Asics"
-                hide-details
-              />
-              <v-checkbox
-                v-model="brand"
-                label="Fila"
-                value="Fila"
+                v-for="brand in brands"
+                :key="brand.id"
+                v-model="selectedBrand"
+                :label="brand.value"
+                :value="brand.value"
+                on-icon="mdi-checkbox-marked-circle"
+                off-icon="mdi-checkbox-blank-circle-outline"
                 hide-details
               />
             </v-expansion-panel-content>
@@ -83,14 +65,43 @@ export default {
   name: "FilterCatalog",
   data() {
     return {
-      brand: [],
-      size: [],
+      selectedBrand: [],
+      selectedsize: [],
+      sizes: [
+        { id: 1, value: "eu", name: "EU" },
+        { id: 2, value: "us", name: "US" },
+      ],
+      brands: [
+        { id: 1, value: "Adidas" },
+        { id: 2, value: "New Balance" },
+        { id: 3, value: "Nike Perfomance" },
+        { id: 4, value: "Reebok" },
+        { id: 5, value: "Asics" },
+        { id: 6, value: "Fila" },
+        { id: 7, value: "Jordan" },
+        { id: 8, value: "Testoni" },
+        { id: 9, value: "Converse" },
+        { id: 10, value: "Berluti" },
+        { id: 11, value: "Johnson and Murphy" },
+        { id: 12, value: "Timberland" },
+        { id: 13, value: "Clarks" },
+        { id: 14, value: "VANS" },
+        { id: 15, value: "Puma" },
+        { id: 16, value: "Crocs" },
+        { id: 17, value: "Calvin Klein" },
+        { id: 19, value: "Lacoste" },
+        { id: 20, value: "By Hudson" },
+        { id: 21, value: "Columbia" },
+        { id: 22, value: "New Balance" },
+        { id: 23, value: "Under Armour" },
+        { id: 24, value: "Bogs" },
+      ],
     };
   },
   methods: {
     clearFilter() {
-      this.brand = [];
-      this.size = [];
+      this.selectedBrand = [];
+      this.selectedsize = [];
     },
   },
 };
@@ -109,6 +120,15 @@ export default {
       font-size: $size-s;
       color: $gray-3;
     }
+
+    .v-expansion-panel-content {
+      padding-bottom: 10px;
+
+      &__wrap {
+        max-height: 250px;
+        overflow-y: auto;
+      }
+    }
   }
 }
 
@@ -125,6 +145,18 @@ export default {
   .filters {
     box-shadow: unset;
     padding: 20px;
+
+    ::v-deep {
+      .v-label {
+        font-size: 12px;
+      }
+
+      .v-input {
+        &--selection-controls {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
 </style>

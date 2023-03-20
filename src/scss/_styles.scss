@@ -14,3 +14,24 @@
 .w-100 {
   width: 100%;
 }
+
+// Style Scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $blue;
+}
